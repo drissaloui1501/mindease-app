@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# MindEase Planner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A lightweight student-focused planner that highlights **Today’s Top 3 tasks**, supports basic task management, and shows simple **wellness prompts** to encourage healthy study habits.
 
-## Available Scripts
+Live demo: https://mindease-app.netlify.app/
 
-In the project directory, you can run:
+> This project is part of the Implementation & Testing milestone for the MindEase product.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Core Features (Implementation)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ✅ Task list with ability to **add tasks** (title, due date, priority)
+- ✅ Toggle tasks between **pending / done**
+- ✅ “**Today’s Top 3**” section
+  - Uses a pure function `getTopThreeTasks(tasks)`  
+  - Sorts by **priority** (high → medium → low) and **due date**
+- ✅ Simple **“Reschedule missed tasks”** button
+  - Moves past-due pending tasks to **tomorrow**
+  - Bumps them to **high priority** to simulate “smart” rescheduling
+- ✅ Context-aware **wellness message** based on how many pending tasks you have today
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- **React** (Create React App)
+- **JavaScript (ES6)**
+- **Jest** (built-in with CRA) for unit testing
+- **Netlify** for deployment
+- **GitHub** for version control and public repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure (key parts)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```text
+mindease-app/
+  src/
+    App.js              # Main UI and core MindEase logic
+    index.js            # React entry point
+    index.css           # Styling
+    utils/
+      tasks.js          # Pure functions: getTopThreeTasks, getTodayISO
+      tasks.test.js     # Unit test for getTopThreeTasks
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    
+## Running the Project Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Install dependencies
+    npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Start the development server
+    npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app will be available at http://localhost:3000.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project includes at least one automated unit test:
+	•	File: src/utils/tasks.test.js
+	•	What it tests:
+	•	getTopThreeTasks(tasks)
+	•	ignores tasks with status: "done"
+	•	returns at most 3 tasks
+	•	orders by priority (high > medium > low) and then by nearest due date
 
-### Code Splitting
+To run tests:
+    npm test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Jest will run and you should see:
+    PASS src/utils/tasks.test.js
+    Test Suites: 1 passed, 1 total
+    Tests:       1 passed, 1 total
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Links for the Milestone
 
-### Making a Progressive Web App
+	•	Figma high-fidelity prototype: -to be added later-
+	•	Public repository: https://github.com/drissaloui1501/mindease-app
+	•	Hosted app (Netlify): https://mindease-app.netlify.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
