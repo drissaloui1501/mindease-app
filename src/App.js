@@ -64,15 +64,7 @@ function getMonthMatrix(baseDate) {
   return weeks;
 }
 
-function getPriorityForDate(dateStr, tasksByDate) {
-  const list = tasksByDate[dateStr];
-  if (!list || list.length === 0) return null;
 
-  if (list.some((t) => t.priority === 'high')) return 'high';
-  if (list.some((t) => t.priority === 'medium')) return 'medium';
-  if (list.some((t) => t.priority === 'low')) return 'low';
-  return null;
-}
 
 const initialTasks = [
   {
