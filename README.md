@@ -78,7 +78,7 @@ Jest will run and you should see:
 
 ## Links for the Milestone
 
-	•	Figma high-fidelity prototype: -to be added later-
+	•	Figma high-fidelity prototype: https://www.figma.com/make/PLv56bnE5dvdEsoxBhUzlX/MindEase-Planner-Screen-Design?node-id=0-4&t=SxghZ8RCBWY1Xlnh-1
 	•	Public repository: https://github.com/drissaloui1501/mindease-app
 	•	Hosted app (Netlify): https://mindease-app.netlify.app/
 
